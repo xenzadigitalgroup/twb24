@@ -1,0 +1,23 @@
+/* Media query untuk menyembunyikan konten di desktop */
+@media screen and (min-width: 768px) {
+    .mobile-only {
+        display: none;
+    }
+    .desktop-warning {
+        display: block;
+        text-align: center;
+        font-size: 1.5em;
+        color: #ff0000;
+        padding: 50px;
+    }
+}
+
+/* Tampilkan konten hanya di perangkat mobile */
+@media screen and (max-width: 767px) {
+    .mobile-only {
+        display: block;
+    }
+    .desktop-warning {
+        display: none;
+    }
+}

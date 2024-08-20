@@ -1,0 +1,77 @@
+/* Style for the sidebar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0; /* Sidebar di sebelah kanan */
+    background-color: #0A8588;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 80px;
+    z-index: 1000; /* Pastikan sidebar berada di atas semua elemen */
+}
+
+.sidebar a {
+    padding: 8px 22px 12px 22px; /* Gaya padding */
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 36px;
+    margin-left: 15px;
+    color: #818181;
+    cursor: pointer;
+}
+
+/* Style for the open button */
+.openbtn {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px; /* Menempatkan tombol hamburger di kanan atas */
+    color: #ffffff;
+    z-index: 1001; /* Pastikan tombol hamburger berada di atas elemen lain */
+}
+
+/* Change style of openbtn to a close button when sidebar is open */
+.openbtn.active {
+    color: #f1f1f1;
+}
+
+/* Transition for main content to avoid shifting when sidebar is open */
+#main {
+    transition: margin-right .5s;
+    padding: 16px;
+}
+
+/* Ensure body margin does not shift */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure sidebar stays in front */
+body {
+    position: relative;
+}
+
+.copyright {
+    color: #ffffff;
+    font-size: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 600px;
+}

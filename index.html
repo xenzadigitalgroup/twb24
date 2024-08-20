@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengambilan Foto Twibbon</title>
+    <link rel="icon" href="aset/svg/logo.png" type="image/png">
+    <link rel="stylesheet" href="aset/css/styles.css">
+    <link rel="stylesheet" href="aset/css/warning.css">
+    <link rel="stylesheet" href="aset/css/spinner.css">
+    <link rel="stylesheet" href="aset/css/sidebar.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">| Database GDrive<b> (Only Admin)</b></a>
+        <a href="https://xenzadigitalgroup.github.io/404/">| Database GSheet<b> (Only Admin)</b></a>
+        <a href="Public/Source/table.html">| List Twibbon Yang Tersedia Saat Ini BP24</a>
+        <a href="https://xenzadigitalgroup.github.io/lapor/">| Lapor Masalah</a>
+        <a href="#">| Kumpulan Twibbon BP23</a>
+        <a href="#">| Kumpulan Twibbon BP24 <b> (Belum Tersedia)</b></a>
+        <a href="https://xenzadigitalgroup.github.io/404/">Login</a>
+        <p class="copyright">&copy; 2024 XENZA DIGITAL GROUP. All rights reserved.</p>
+    </div>
+    
+    <!-- Button to open the sidebar -->
+    <span class="openbtn" onclick="toggleNav()">&#9776;</span> <!-- Hamburger icon -->
+    <div class="desktop-warning">
+        Halaman ini hanya dapat diakses melalui perangkat mobile.
+    </div>
+
+    <div class="mobile-only">
+        <header>
+            <h1>Pengambilan Foto Twibbon BP24</h1>
+        </header>
+
+        <div style="max-width: 900px; margin: 68px auto 30px auto; image-resolution: 1080px;">
+            <img src="aset/welcome/WELCOME BP24.png" alt="">
+        </div>
+        
+        <div class="container">
+            <form id="photoForm">
+                <div class="input-container">
+                    <label for="studentName">Masukkan Username Instagram:</label>
+                    <input type="text" id="studentName" placeholder="@" required>
+                    <span class="clear-btn" onclick="clearInput()">×</span> <!-- Tombol silang -->
+                </div>
+                <button type="button" onclick="showPhoto()">Tampilkan Foto</button>
+            </form>        
+            <div id="photoDisplay" class="photo-container">
+                <div id="spinner" class="spinner"></div>
+                <img id="studentPhoto" src="" alt="Foto Mahasiswa" style="display: none;">
+                <a id="downloadButton" href="#" download class="download-button" style="display: none;">Unduh Foto</a>
+            </div>
+            <p id="errorMessage" class="error-message"></p>
+        </div>        
+
+        <div class="container_2">
+            <h3>Bagi yang belum upload fotonya, silahkan tekan dan upload pada tombol dibawah ini</h3>
+            <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfJftgTDU4WimmP9kxrZSsz8aUY7Y4uTVTNc0GmAxdRB6Y5lA/viewform?usp=sharing'">
+                Upload Foto
+            </button>
+            <p>Note: Jika sudah berhasil upload fotonya, tunggu untuk fotonya diproses, dan lakukan pengecekan 1x24 jam.</p>
+            <p>Batas upload foto adalah tanggal 30 Agustus 2024, jika lewat maka link tidak dapat menerima gambar lagi.</p>
+        </div>
+        
+        <footer>
+            <h2>Bantuan</h2>
+            <h5 style="color: red; font-size: 12px;">Note : Form saat ini tidak dapat menerima respon, jika ada keluhan dan masalah silahkan tekan garis tiga
+                pada sebelah kanan atas halaman, lalu tekan pada bagian "Lapor Masalah".
+            </h5>
+            <form id="helpForm">
+                <label for="helpName">Nama:</label>
+                <input type="text" id="helpName" placeholder="Masukkan nama Anda" required>
+
+                <label for="helpComplaint">Keluhan:</label>
+                <textarea id="helpComplaint" placeholder="Masukkan keluhan Anda" required></textarea>
+
+                <label for="helpEmail">Email:</label>
+                <input type="email" id="helpEmail" placeholder="Masukkan email Anda" required>
+
+                <button type="submit">Kirim</button>
+            </form>
+            <p>&copy; 2024 XENZA DIGITAL GROUP. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <noscript>
+        <p>JavaScript harus diaktifkan untuk melihat konten ini.</p>
+    </noscript>
+    
+    <script src="script/script.js"></script>
+    <script src="script/clear.js"></script>
+    <script src="script/sidebar.js"></script>
+</body>
+</html>

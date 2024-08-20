@@ -1,3 +1,22 @@
+window.onload = function() {
+    function checkMaintenanceTime() {
+        const now = new Date();
+        const hours = now.getHours();
+        console.log("Current hour: " + hours);
+
+        if (hours >= 16 || hours < 3) {
+            const maintenanceMessage = document.getElementById('maintenanceMessage');
+            if (maintenanceMessage) {
+                console.log("Menampilkan pesan maintenance");
+                maintenanceMessage.style.display = 'block'; // Tampilkan pesan
+            } else {
+                console.error("Elemen #maintenanceMessage tidak ditemukan!");
+            }
+        }
+    }
+
+    checkMaintenanceTime();
+};
 function showPhoto() {
     const studentName = document.getElementById('studentName').value.trim();
     const photoDisplay = document.getElementById('photoDisplay');

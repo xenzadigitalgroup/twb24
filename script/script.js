@@ -4,7 +4,7 @@ window.onload = function() {
         const hours = now.getHours();
         console.log("Current hour: " + hours);
 
-        if (hours >= 16 || hours < 3) {
+        if (hours >= 23 || hours < 2) {
             const maintenanceMessage = document.getElementById('maintenanceMessage');
             if (maintenanceMessage) {
                 console.log("Menampilkan pesan maintenance");

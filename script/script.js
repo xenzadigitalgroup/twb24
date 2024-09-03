@@ -1,10 +1,48 @@
+document.getElementById('helpForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah pengiriman form default
+
+    const formData = new FormData(this);
+
+    fetch(this.action, {
+        method: this.method,
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            Swal.fire({
+                title: 'Terkirim!',
+                text: 'Pesan Anda berhasil dikirim.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+            this.reset(); // Reset form setelah sukses
+        } else {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Terjadi kesalahan, coba lagi nanti.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }
+    }).catch(error => {
+        Swal.fire({
+            title: 'Gagal!',
+            text: 'Terjadi kesalahan jaringan, coba lagi nanti.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+    });
+});
+
 window.onload = function() {
     function checkMaintenanceTime() {
         const now = new Date();
         const hours = now.getHours();
         console.log("Current hour: " + hours);
 
-        if (hours >= 23 || hours < 2) {
+        if (hours >= 23 || hours < 1) {
             const maintenanceMessage = document.getElementById('maintenanceMessage');
             if (maintenanceMessage) {
                 console.log("Menampilkan pesan maintenance");
@@ -17,6 +55,7 @@ window.onload = function() {
 
     checkMaintenanceTime();
 };
+
 function showPhoto() {
     const studentName = document.getElementById('studentName').value.trim();
     const photoDisplay = document.getElementById('photoDisplay');
